@@ -30,7 +30,7 @@ import android.view.View;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
-import com.android.internal.util.spark.Utils;
+import com.android.internal.util.spark.SparkUtils;
 
 import com.spark.support.R;
 import com.spark.support.colorpicker.ColorPickerDialog;
@@ -313,7 +313,7 @@ public class ColorBlendPreference extends Preference
     private void updateDialogSliderPreview() {
         int currentPreview = mDialogColorPreviewSlider.getProgress();
         mDialogPreviewColorBetween.setBackgroundColor(
-                Utils.getBlendColorForPercent(mPreviewColorEnd, mPreviewColorStart,
+                SparkUtils.getBlendColorForPercent(mPreviewColorEnd, mPreviewColorStart,
                         mPreviewBlendReverse, currentPreview));
         mDialogColorPreviewText.setText(
                 getContext().getString(R.string.color_blend_preview, currentPreview));
@@ -373,7 +373,7 @@ public class ColorBlendPreference extends Preference
         }
         if (mViewColorBetween != null) {
             mViewColorBetween.setBackgroundColor(
-                    Utils.getBlendColorForPercent(mColorEnd, mColorStart, mBlendReverse, 50));
+                    SparkUtils.getBlendColorForPercent(mColorEnd, mColorStart, mBlendReverse, 50));
         }
     }
 
