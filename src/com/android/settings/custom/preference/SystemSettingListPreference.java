@@ -31,6 +31,10 @@ public class SystemSettingListPreference extends SelfRemovingListPreference {
         super(context, attrs);
     }
 
+    public SystemSettingListPreference(Context context) {
+        super(context);
+    }
+
     public int getIntValue(int defValue) {
         return getValue() == null ? defValue : Integer.valueOf(getValue());
     }
